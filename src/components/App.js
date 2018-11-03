@@ -1,6 +1,7 @@
 import React from 'react';
 import Routes from "./../Routes";
 import { Link, withRouter } from "react-router-dom";
+import styles from '../scss/App.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class App extends React.Component {
     console.log(childProps);
 
     return (
-      <div className="app">
+      <div className={styles.app}>
         <nav>
           <ul>
             <li>
