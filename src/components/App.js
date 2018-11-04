@@ -1,6 +1,6 @@
 import React from 'react';
 import Routes from "./../Routes";
-import Nav from "./Nav";
+import Nav from "./Nav/Nav";
 import { Link, withRouter } from "react-router-dom";
 import styles from '../scss/App.scss';
 

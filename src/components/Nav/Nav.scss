@@ -1,0 +1,13 @@
+@import '../../scss/mixins';
+
+nav {
+  ul {
+    @include list-reset;
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    margin-right: 10px;
+  }
+}
