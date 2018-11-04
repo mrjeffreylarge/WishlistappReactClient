@@ -1,5 +1,6 @@
 import React from 'react';
 import Routes from "./../Routes";
+import Nav from "./Nav";
 import { Link, withRouter } from "react-router-dom";
 import styles from '../scss/App.scss';
 
@@ -26,31 +27,10 @@ class App extends React.Component {
       isAuthenticated: this.state.isAuthenticated,
       userHasAuthenticated: this.userHasAuthenticated
     };
-    console.log(childProps);
 
     return (
       <div className={styles.app}>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            {this.state.isAuthenticated ?
-            <React.Fragment>
-            <li>
-              <a onClick={this.handleLogout}>Logout</a>
-            </li>
-            <li>
-              <Link to="/user">User</Link>
-            </li>
-            </React.Fragment>
-            :
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            }
-          </ul>
-        </nav>
+        <Nav isAuthenticated={this.state.isAuthenticated} handleLogout={this.handleLogout}/>
         <Routes childProps={childProps} />
       </div>
     );
