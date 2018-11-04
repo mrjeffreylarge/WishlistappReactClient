@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import NavItem from "./NavItem";
 
 class Nav extends React.Component {
   constructor(props) {
@@ -10,22 +11,14 @@ class Nav extends React.Component {
     return (
       <nav>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
+          <NavItem title="home" to="/"/>
           {this.props.isAuthenticated ?
           <React.Fragment>
-          <li>
-            <a onClick={this.props.handleLogout}>Logout</a>
-          </li>
-          <li>
-            <Link to="/user">User</Link>
-          </li>
+          <NavItem title="Logout" onClick={this.props.handleLogout} />
+          <NavItem title="User" to="/user"/>
           </React.Fragment>
           :
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
+          <NavItem title="Login" to="/login"/>
           }
         </ul>
       </nav>
