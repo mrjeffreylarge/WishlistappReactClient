@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import Input from './Forms/Input';
+import Button from './Forms/Button';
+
 
 class Login extends React.Component {
   constructor(props) {
@@ -71,39 +74,29 @@ class Login extends React.Component {
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
+          <Input
+            type="text"
+            name="username"
+            title="Username"
+            placeholder="Username"
+            value={this.state.username}
+            handleChange={this.handleChange}
+          />
 
-          <div>
-            <label htmlFor="username">
-              Username
-            </label>
-            <input
-              autoFocus
-              id="username"
-              type="email"
-              value={this.state.username}
-              onChange={this.handleChange}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="password">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-          </div>
-
-          <button
+          <Input
+            type="password"
+            name="password"
+            title="Password"
+            value={this.state.password}
+            handleChange={this.handleChange}
+          />
+          <Button
+            title="Login"
             disabled={!this.validateForm() || this.state.isLoading}
-            type="submit"
-          >
-            Login
-          </button>
-          {this.state.error &&
+          />
+
+          {
+            this.state.error &&
             <div>{this.state.error}</div>
           }
 
