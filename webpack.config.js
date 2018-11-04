@@ -7,7 +7,12 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  devServer: {
+    // https://tylermcginnis.com/react-router-cannot-get-url-refresh/
+    historyApiFallback: true
   },
   module: {
     rules: [
