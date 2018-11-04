@@ -7,3 +7,4 @@ node_modules
 # other things
 .DS_STORE
 .env
+*.log
